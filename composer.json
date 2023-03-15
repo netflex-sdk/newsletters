@@ -1,0 +1,34 @@
+{
+    "name": "netflex/newsletters",
+    "description": "Netflex Newsletters library",
+    "type": "library",
+    "license": "MIT",
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Netflex\\Newsletters\\": ""
+        }
+    },
+    "replace": {
+        "netflex/newsletters": "*"
+    },
+    "require": {
+        "netflex/pages": "^4.28.2",
+        "netflex/api": "^4.28.2",
+        "netflex/query-builder": "^4.28.2",
+        "netflex/support": "^4.28.2",
+        "php": "^7.4|^8.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.25.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Netflex\\Newsletters\\Providers\\NewslettersServiceProvider"
+            ]
+        }
+    }
+}
