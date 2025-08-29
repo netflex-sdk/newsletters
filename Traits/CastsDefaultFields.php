@@ -4,7 +4,10 @@ namespace Netflex\Newsletters\Traits;
 
 use Netflex\Newsletters\Newsletter;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
+use Netflex\API\Facades\API;
+use Illuminate\Support\Str;
 
 trait CastsDefaultFields
 {
@@ -39,7 +42,7 @@ trait CastsDefaultFields
    */
   public function getTypeAttribute()
   {
-
+    
     if($this->attributes['transactional'] && $this->attributes['automation']) {
       return Newsletter::TYPE_TRANSACTIONAL;
     }
@@ -47,7 +50,7 @@ trait CastsDefaultFields
     if($this->attributes['transactional']) {
       return Newsletter::TYPE_TRANSACTIONAL_CAMPAIGN;
     }
-
+    
     if($this->attributes['automation']) {
       return Newsletter::TYPE_AUTOMATION;
     }
